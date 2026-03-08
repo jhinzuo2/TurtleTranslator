@@ -10,7 +10,7 @@ Built for Turtle WoW (1.12 client), supports multiple languages with customizabl
 - Translates messages in selected channels (whisper, say, yell, party, guild, emote, officer, raid, etc.)
 - Choose target language (English, Spanish, French, German, Italian, Portuguese, Polish, Russian, Romanian, Czech)
 - Select which source languages to translate from
-- Movable, resizable settings window with drag-to-save position
+- Movable window with drag-to-save position
 - Debug mode for troubleshooting detection & translation
 
 ## Supported Languages
@@ -28,7 +28,7 @@ Built for Turtle WoW (1.12 client), supports multiple languages with customizabl
 
 ## Commands
 
-- `/tt menu` or `/turtletranslator` – Open/close settings window
+- `/tt menu` or `/turtletranslator` or simply `/tt` – Open/close settings window
 - `/tt debug` – Toggle debug messages (shows detection scores, skipped reasons, etc.)
 
 ## Installation
