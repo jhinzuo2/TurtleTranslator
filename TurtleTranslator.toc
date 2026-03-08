@@ -1,7 +1,7 @@
 ## Interface: 11200
 ## Title: TurtleTranslator
 ## Notes: Translates chat messages across several languages
-## Author: HeartSorrow
+## Author: Hey my team rules!
 ## Version: 0.11
 ## SavedVariables: TurtleTranslatorDB
 
