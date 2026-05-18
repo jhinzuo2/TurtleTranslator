@@ -24,6 +24,8 @@ Dictionaries\dict_ro_to_en.lua
 Dictionaries\dict_en_to_ro.lua
 Dictionaries\dict_cs_to_en.lua
 Dictionaries\dict_en_to_cs.lua
+Dictionaries\dict_zhcn_to_en.lua
+Dictionaries\dict_en_to_zhcn.lua
 
 Constants.lua
 DictionaryLoader.lua

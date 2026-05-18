@@ -14,6 +14,7 @@ for i = 1, numLangs - 1 do
     local langIdx = i   -- This is the key line you were missing!
 
     -- 1. Load lang → English (detection + source → English)
+    -- NOTE: string.lower is safe for Chinese in WoW's Lua (C locale, only affects a-z bytes)
     local toEnDict = _G["dict_" .. langCode .. "_to_en"] or {}
     for foreignWord, english in pairs(toEnDict) do
         local clean = string.lower(foreignWord or "")

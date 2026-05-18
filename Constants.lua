@@ -5,7 +5,7 @@ ADDON_VERSION = GetAddOnMetadata("TurtleTranslator", "Version") or "Unknown"
 lookups = lookups or {}
 translations = translations or {}
 
-langNames = {"es","fr","de","it","pt","pl","ru","ro","cs"}
+langNames = {"es","fr","de","it","pt","pl","ru","ro","cs","zhcn"}
 
 TurtleTranslatorDB = TurtleTranslatorDB or {
     enabled = true,
@@ -34,6 +34,8 @@ TurtleTranslatorDB = TurtleTranslatorDB or {
         [7] = true,
         [8] = true,
         [9] = true,
+	[10] = true,
+
     },
 	debugEnabled = false,  -- new: debug prints off by default
 	windowPos = { x = 0, y = 0 },  -- default position (center)
@@ -54,6 +56,22 @@ defaultChannels = {
     otherchannels = false,
 }
 
+-- Default sourceLangs – ensures newly added languages (like zhcn) are enabled
+-- even on SavedVariables written before they existed
+defaultSourceLangs = {
+    [0]  = false,  -- English
+    [1]  = true,   -- Spanish
+    [2]  = true,   -- French
+    [3]  = true,   -- German
+    [4]  = true,   -- Italian
+    [5]  = true,   -- Portuguese
+    [6]  = true,   -- Polish
+    [7]  = true,   -- Russian
+    [8]  = true,   -- Romanian
+    [9]  = true,   -- Czech
+    [10] = true,   -- Chinese (Simplified)
+}
+
 -- Language list – define here so EVERYONE sees it
 langs = {
     {index = 0, name = "English"},
@@ -64,8 +82,10 @@ langs = {
     {index = 5, name = "Portuguese"},
     {index = 6, name = "Polish"},
     {index = 7, name = "Russian"},
-	{index = 8, name = "Romanian"},
+    {index = 8, name = "Romanian"},
     {index = 9, name = "Czech"},
+    {index = 10, name = "Chinese (Simplified)"},
+
 }
 
 numLangs = 0
