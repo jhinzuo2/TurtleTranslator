@@ -104,10 +104,28 @@ end
 -- Safe ASCII punct strip (never touches bytes > 127)
 local PUNCT_STRIP = [[!?.,;:%(%) "%[%]%-%+%%%^&*=<>{}|_ ]]
 
+local function StripLinks(msg)
+    -- Remove WoW color codes: |cAARRGGBB and |r
+    msg = string.gsub(msg, "|c%x%x%x%x%x%x%x%x", "")
+    msg = string.gsub(msg, "|r", "")
+    -- Remove WoW hyperlink wrappers |Htype:data:...|h ... |h  (keep visible text)
+    msg = string.gsub(msg, "|H[^|]*|h", "")
+    msg = string.gsub(msg, "|h", "")
+    -- Strip square brackets from item/quest names e.g. [Sword of X] -> Sword of X
+    msg = string.gsub(msg, "%[([^%]]*)%]", "%1")
+    -- Remove any stray pipe characters
+    msg = string.gsub(msg, "|.", "")
+    return msg
+end
+
 local function TranslateMessage(msg, author)
     if not TurtleTranslatorDB.enabled then return end
     if not msg or msg == "" then return end
     if author == playerName then return end
+
+    -- Strip WoW item/quest/spell links and color codes before any processing
+    msg = StripLinks(msg)
+    if not msg or msg == "" then return end
 
     -- Step 1: Tokenize – space-split for Latin, char-level for CJK
     local words = {}
