@@ -1,8 +1,8 @@
 ## Interface: 11200
 ## Title: TurtleTranslator
 ## Notes: Translates chat messages across several languages
-## Author: Gangasrotogati
-## Version: 0.11
+## Author: Gangasrotogati // Jhinzuo for zh_cn
+## Version: 0.12wip
 ## SavedVariables: TurtleTranslatorDB
 
 # Dictionary files – loaded statically, return tables
